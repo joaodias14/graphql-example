@@ -1,0 +1,34 @@
+### Spring Boot ###
+spring:
+  main:
+    web-application-type: reactive
+  webflux:
+    base-path: /graphql-example/v1
+  application:
+    name: graphql-example
+    majorVersion: 1
+  cloud:
+    config:
+      enabled: false
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json
+  port: ${port:8070}
+
+eureka:
+  client:
+    enabled: false
+
+graphql:
+  endpoint: /graphql-example/v1/graphql
+  packages: dias.joao.graphql
+  playground:
+    enabled: false
+  sdl:
+    endpoint: $/graphql-example/v1/sdl
+
+logging:
+  level:
+    root: INFO
